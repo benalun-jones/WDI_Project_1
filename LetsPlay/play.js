@@ -1,68 +1,88 @@
-
 window.onload = function() {
-
-// document.getElementById("play").addEventListener("click", check);
-
-// function check(){
-//   console.log ("working")
-//   }
-
-// function play(){
-//   console.log ("music")
-//   var audio = document.getElementById("audio");
-//     audio.play();
-// }
 
 document.getElementById("play").addEventListener("click", playMusic);
 
+var songSelect;
+var whichPlayer = 1; // true is player 1, false is player 2
+var player1Score = 0;
+var player2score = 0;
 
-audio.clip = number [18];
-audio.Play();
+  function buttonCallback(event) {
+    var index = Array.prototype.slice.call(buttons).indexOf(event.target);
 
+    soundManager.stop(songSelect.filename);
+    if(songSelect.answers[index].isCorrect) {
+      alert("Correct!");
+      if(whichPlayer == true){
+        player1Score++
+      } else {
+        player2score++
+      }
+    }else {
+      alert("You know NOTHING!");
+    }
+    console.log("before", whichPlayer);
+    whichPlayer = whichPlayer == 1 ? 2 : 1;
+    console.log("after", whichPlayer);
+    alert("Player " + whichPlayer + " to Play next!")
+  }
 
-var  audioClips = [
-  "Ace_Hood_Flow.m4a", 
-  "Buzzin.m4a", 
-  "Candy_Shop.m4a", 
+// in the dom, add some information about which player is meant to play
+// create 2 variables player1Score and player2score, and increment the number of points 
+// for each time they answer correctly
 
+var buttons = document.getElementsByTagName("button");
 
-var number = [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen]
-
-
-
-var songSelecet: AudioClip[
-  track ('Ace_Hood_Flow', true, '../sounds/Ace_Hood_Flow.m4a')
-
-
-];
-
-<audio id="sound" src="../sounds/Ace_Hood_Flow.m4a">
-<audio id="sound" src="../sounds/Buzzin.m4a">
-<audio id="sound" src="../sounds/Candy_Shop.m4a">
-<audio id="sound" src="../sounds/Harder_Than_You_Think.m4a">
-<audio id="sound" src="../sounds/Hey_Porsche.m4a">
-<audio id="sound" src="../sounds/High_Hopes.m4a">
-<audio id="sound" src="../sounds/Ho_Hey.m4a">
-<audio id="sound" src="../sounds/Jubel.mp3">
-<audio id="sound" src="../sounds/Let_Her_Go.m4a">
-<audio id="sound" src="../sounds/Mess_Is_Mine.m4a">
-<audio id="sound" src="../sounds/On_Top.m4a">
-<audio id="sound" src="../sounds/Pompeii.m4a">
-<audio id="sound" src="../sounds/See_You_Again.m4a">
-<audio id="sound" src="../sounds/The_Nights.m4a">
-<audio id="sound" src="../sounds/The_Other_Side.m4a">
-<audio id="sound" src="../sounds/Velvet_Elvis.m4a">
-<audio id="sound" src="../sounds/Wake_Me_Up.m4a">
-<audio id="sound" src="../sounds/Window_Shopper.m4a">
-
-
-function playMusic(){
-  var audioarray = document.getElementsByTagName("audio");
-  var songSelect = Random.Range(0,audioArray.length)
-  songSelect.play();
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", buttonCallback);
+  //function where, if neither player has reached 4, switch player 
+  //and repeat the entire process (do i need to create a function of the whole code, and get that to run again?)
 }
 
 
+var buttons = document.getElementsByTagName("button");
+var songs = window.songs;
+
+function playMusic(){
+  var songIndex = Math.floor(Math.random()*songs.length);
+  songSelect = window.songs[Math.floor(Math.random()*songs.length)];
+  var sound = soundManager.createSound({
+    id: songSelect.filename,
+    url: songSelect.url
+  });
+
+  sound.play();
+
+  for (var i = 0; i < buttons.length; i++) {
+
+    buttons[i].innerHTML=songSelect.answers[i].answer;
+    
+    //function where, if neither player has reached 4, switch player 
+    //and repeat the entire process (do i need to create a function of the whole code, and get that to run again?)
+  }
+}
+
+function updateScoreBoard(){
+  document.getElementById('Player1').innerText = Player1Score;
+  document.getElementById('Player2').innerText = Player2Score;
+  }
+  
+
+  function CheckForWinner(){
+    if (Player1Score||Player2Score===4){
+      alert("You Win!")
+    }
+    else {
+
+      }
+    }
+
+} // window onload 
+
+// function updateScoreBoard(){
+//   document.getElementById('humanScore').innerText = userScore;
+//   document.getElementById('computerScore').innerText = botScore;
+// }
 
 
 
@@ -71,9 +91,50 @@ function playMusic(){
 
 
 
-// <input type="img" value="play"  onclick="play()">
 
 
 
 
-};
+
+
+
+
+
+
+// document.getElementsByTagName("button").addEventListener("click", stopMusic);
+
+  // function stopMusic(){
+  //   console.log('check')
+  //   soundManager.stop(songSelect.filename);
+  //   buttons.index()
+  //   // console.log(songSelect.answers);
+  // }
+
+// var q1 = Object.create(PossibleAnswers)
+// q1.answers = ['Ace Hood Flow (Skepta)', 'That’s not me (Skepta)', 'Hate Me Now (Nas)']
+// q1.correctAnswer = [0];
+// song1: ['Ace Hood Flow (Skepta)', 'That’s not me (Skepta)', 'Hate Me Now (Nas)']
+
+
+// var q2 = Object.create(Question);
+// q2.text = "How many campus's does G.A. have?";
+// q2.answers = ['10', '8', '14', '9'];
+// q2.correctAnswer = 2;
+// questionId1: 2;
+// this.questions.push(q2);
+
+
+
+
+//create a function that, when an answer is clicked, will alert whether you have clicked the correct answer
+//create a function that, if the correct answer is clicked, will add a counter to the player score 
+//create a function that, when the player score reaches 5, the game is over and player wins
+
+
+
+
+// }
+
+
+
+

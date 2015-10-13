@@ -1,4 +1,39 @@
-body {
-  background-image: url("http://previews.123rf.com/images/odina222/odina2221207/odina222120700023/14398392-colored-background-music-with-headphones-and-speakers-Stock-Vector.jpg")
-  /*potential backgorund image (http://www.wallpaperup.com/uploads/wallpapers/2015/05/29/703265/b4cb422b4590f31285012791345b1ca4.jpg)*/
+
+  html { 
+    background: url("http://images3.alphacoders.com/548/54847.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  h1 {
+    text-align: center;
+    color: #E3E3E3;
+    font-family: Rockwell;
+    font-size: 50px;
+  }
+
+  h5 {
+    text-align: center;
+    color: #E3E3E3;
+    font-family: Rockwell;
+    font-size: 25px;
+  }
+
+  h6 {
+    text-align: center;
+    color: #E3E3E3;
+    font-family: Rockwell;
+    font-size: 20px;
+  }
+
+  #navigation {
+    text-align: center;
+  }
+
+  #home, #instructions, #letsplay {
+    color: #E3E3E3;
+    padding: 20px 40px;
+    font-size: 45px;
   }

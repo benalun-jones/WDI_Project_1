@@ -1,3 +1,46 @@
-body {
-  background-image: url("http://www.listofimages.com/wp-content/uploads/2013/07/speakers-headphones-records-dj-music-gramophones-vector.jpg")
-    }
+html { 
+  background: url("http://hdwpics.com/images/23AB97396254/Black-And-White-Hd.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h5 {
+  font-size: 35px;
+}
+
+h6 {
+  font-size: 20px;
+}
+
+#instruc {
+  text-align: center;
+  color: white;
+  font-family: Rockwell;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 1000px;
+    height: 100px;
+}
+
+#navigation {
+  text-align: center;
+  background-color: black;
+  opacity: 0.7;
+  width: 850px;
+  margin: 0 auto;
+  position: absolute;
+  top: 600px;
+  right: 0px;
+  width: 950px;
+  height: 100px;
+  color: white;
+}
+
+#home, #instructions, #letsplay {
+  color: white;
+  padding: 20px 40px;
+  font-size: 45px;
+}
