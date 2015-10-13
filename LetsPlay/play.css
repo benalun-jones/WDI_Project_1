@@ -6,3 +6,58 @@ html {
   background-size: cover;
 }
 
+a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+#play {
+  position: absolute;
+  top: 80px;
+  right: 350px;
+  width: 1000px;
+  height: 100px;
+}
+
+#ansbuttons {
+  position: relative;
+  top: 450px;
+  left: 650px;
+  width: 500px;
+  height: 100px;
+  text-align: center;
+}
+
+#navigation {
+  background-color: black;
+  font-size: 40px;
+  position: absolute;
+  top: 600px;
+  right: 50px;
+  width: 470px;
+  height: 100px;
+  font-family: Rockwell;
+}
+
+#clickinfo {
+  color: white;
+  font-family: Rockwell;
+  position: absolute;
+  top: 5px;
+  right: 160px;
+  width: 600px;
+}
+
+table {
+  border: 1px solid white;
+  color: white;
+}
+
+/*tr {
+  border: 1px solid white;
+}*/
+
+
+
+
+

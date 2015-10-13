@@ -5,7 +5,7 @@ document.getElementById("play").addEventListener("click", playMusic);
 var songSelect;
 var whichPlayer = 1; // true is player 1, false is player 2
 var player1Score = 0;
-var player2score = 0;
+var player2Score = 0;
 
   function buttonCallback(event) {
     var index = Array.prototype.slice.call(buttons).indexOf(event.target);
@@ -15,12 +15,16 @@ var player2score = 0;
       alert("Correct!");
       if(whichPlayer == true){
         player1Score++
+        var playerOne = document.getElementById('Player1').innerText = player1Score;
+
       } else {
-        player2score++
+        player2Score++
+        document.getElementById('Player2').innerText = player2Score ;
       }
     }else {
       alert("You know NOTHING!");
     }
+    CheckForWinner()
     console.log("before", whichPlayer);
     whichPlayer = whichPlayer == 1 ? 2 : 1;
     console.log("after", whichPlayer);
@@ -68,15 +72,12 @@ function updateScoreBoard(){
   }
   
 
-  function CheckForWinner(){
-    if (Player1Score||Player2Score===4){
+function CheckForWinner(){
+    if(player1Score === 4 || player2Score === 4){
       alert("You Win!")
+      location.reload();
     }
-    else {
-
-      }
-    }
-
+  }
 } // window onload 
 
 // function updateScoreBoard(){
