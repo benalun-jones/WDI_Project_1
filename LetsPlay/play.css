@@ -13,8 +13,8 @@ a {
 
 #play {
   position: absolute;
-  top: 80px;
-  right: 350px;
+  top: 150px;
+  right: 380px;
   width: 1000px;
   height: 100px;
 }
@@ -33,8 +33,8 @@ a {
   font-size: 40px;
   position: absolute;
   top: 600px;
-  right: 50px;
-  width: 470px;
+  right: 220px;
+  width: 550px;
   height: 100px;
   font-family: Rockwell;
 }
@@ -42,10 +42,12 @@ a {
 #clickinfo {
   color: white;
   font-family: Rockwell;
+  font-size: 30px;
   position: absolute;
   top: 5px;
-  right: 160px;
+  right: 200px;
   width: 600px;
+  text-align: center;
 }
 
 table {
@@ -57,6 +59,14 @@ table {
   border: 1px solid white;
 }*/
 
+table {
+    width: 200px;
+    height: 120px;
+}
+
+td {
+    text-align: center;
+}
 
 
 
